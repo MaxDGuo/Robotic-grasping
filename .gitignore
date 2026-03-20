@@ -37,4 +37,12 @@ temp/
 output/
 runs/
 checkpoints/
+logs/
 *.log
+
+# 大型数据集 (通常不需要上传)
+cornell_dataset/
+data/
+datasets/
+*.tar
+tarball/
