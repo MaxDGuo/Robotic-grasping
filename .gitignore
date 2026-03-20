@@ -1,0 +1,23 @@
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 临时文件和数据
+*.log
+tmp/
+temp/
+
+# MuJoCo 编译文件
+*.mjb
+
+# 大型视频文件 (避免仓库臃肿)
+*.mp4
+*.avi
+*.mov

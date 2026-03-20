@@ -1,0 +1,57 @@
+
+<mujocoinclude>
+    <body name="piper_right" pos="0.1 0.2 0" euler="0 0 1.5708">
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="base_link" contype="2" conaffinity="1"/>
+
+        <body name="link1" pos="0 0 0.123">
+            <inertial pos="0.000121505 0.000104632 -0.00438597" quat="0.682111 0.730899 0.0143111 -0.0175062" mass="0.71" diaginertia="0.000489262 0.000439887 0.000404551" />
+            <joint name="joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.618 2.168" frictionloss="50"/>
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link1" contype="2" conaffinity="1"/>
+
+            <body name="link2" pos="0 0 0" quat="0.0356735 -0.0356786 -0.706207 -0.706205">
+                <inertial pos="0.198666 -0.0109269 0.00142122" quat="0.510131 0.475585 0.525075 0.48773" mass="1.17" diaginertia="0.0679032 0.067745 0.00111966" />
+                <joint name="joint2" pos="0 0 0" axis="0 0 1" limited="true" range="0 3.14" frictionloss="60"/>
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link2" contype="2" conaffinity="1"/>
+
+                <body name="link3" pos="0.28503 0 0" quat="0.637536 0 0 -0.77042">
+                    <inertial pos="-0.0202738 -0.133915 -0.000458683" quat="0.706282 0.705111 0.0532202 0.0339395" mass="0.5" diaginertia="0.0138227 0.0138032 0.000244685" />
+                    <joint name="joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.967 0" frictionloss="50"/>
+                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link3" contype="2" conaffinity="1"/>
+                    
+                    <body name="link4" pos="-0.021984 -0.25075 0" quat="0.707105 0.707108 0 0">
+                        <inertial pos="-9.66636e-05 0.000876064 -0.00496881" quat="0.714689 -0.0948484 0.0635223 0.690064" mass="0.38" diaginertia="0.000191586 0.000185052 0.000152863" />
+                        <joint name="joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-1.745 1.745" frictionloss="50"/>
+                        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link4" contype="2" conaffinity="1"/>
+
+                        <body name="link5" pos="0 0 0" quat="0.707105 -0.707108 0 0">
+                            <inertial pos="-4.10554e-05 -0.0566487 -0.00372058" quat="0.709589 0.704614 0.00134613 -0.00132656" mass="0.383" diaginertia="0.00166169 0.00164328 0.000185028" />
+                            <joint name="joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-1.22 1.22" frictionloss="50"/>
+                            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link5" contype="2" conaffinity="1"/>
+
+                            <body name="link6" pos="8.8259e-05 -0.091 0" quat="0.707105 0.707108 0 0">
+                                <inertial pos="-0.000182345 7.94104e-05 0.0316214" quat="0.999977 6.30554e-05 0.00678017 0.000789386" mass="0.456991" diaginertia="0.000938039 0.000723068 0.000395388" />
+                                <joint name="joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.0944" frictionloss="50"/>
+                                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="link6" contype="2" conaffinity="1"/>
+                                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="gripper_base" />
+
+                                <body name="link7" pos="0 0 0.1358" quat="0.707105 0.707108 0 0">
+                                    <inertial pos="0.000651232 -0.049193 0.00972259" quat="0.477798 0.572974 -0.518028 0.418398" mass="0.025" diaginertia="7.74531e-05 7.36783e-05 5.0886e-06" />
+                                    <joint name="joint7" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="0 0.035" frictionloss="100"/>
+                                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link7" name="piper_gripper_finger_touch_left" 
+                                    contype="2" conaffinity="1" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="5 2 0.1"/>
+                                </body>
+                                <body name="link8" pos="0 0 0.1358" quat="-2.59734e-06 -2.59735e-06 -0.707108 -0.707105">
+                                    <inertial pos="0.000651232 -0.049193 0.00972259" quat="0.477798 0.572974 -0.518028 0.418398" mass="0.025" diaginertia="7.74531e-05 7.36783e-05 5.0886e-06" />
+                                    <joint name="joint8" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.035 0" frictionloss="100"/>
+                                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link8" name="piper_gripper_finger_touch_right" 
+                                    contype="2" conaffinity="1" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="5 2 0.1"/>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+
+</mujocoinclude>

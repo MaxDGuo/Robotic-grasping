@@ -1,0 +1,31 @@
+<mujoco>
+  <include file="piper_scene.xml"/>
+  <include file="piper_dependencies.xml"/>
+
+  <worldbody>
+    <include file="piper_right.xml" />
+
+    <body mocap="true" name="mocap" >
+      <site pos="0.1 0 0" size="0.1 0.002 0.002" type="box" name="mocap_site1" rgba="1 0.33 0.33 1" />
+      <site pos="0 0.1 0" size="0.002 0.1 0.002" type="box" name="mocap_site2" rgba="0.33 1 0.33 1" />
+      <site pos="0 0 0.1" size="0.002 0.002 0.1" type="box" name="mocap_site3" rgba="0.33 0.33 1 1" />
+
+    </body>
+
+    <!-- <body name="pillar" pos="0.1 0.5 0.15">
+      <geom pos="0 0 0" size="0.04 0.04 0.15" type="box" name="pillar" rgba="0.8 1 0.4 1" 
+      solref="0.001 1" solimp="0.999 0.999 0.001" contype="1" conaffinity="2"/>
+    </body> -->
+
+  </worldbody>
+
+  <actuator>
+      <position name="joint1" ctrllimited="true" ctrlrange="-2.618 2.618" joint="joint1" kp="800" user="1" forcelimited="false" forcerange="-500 500"/>
+      <position name="joint2" ctrllimited="true" ctrlrange="0 3.14158" joint="joint2" kp="1600" user="1" forcelimited="false" forcerange="-500 500"/>
+      <position name="joint3" ctrllimited="true" ctrlrange="-2.697 0" joint="joint3" kp="400" user="1" forcelimited="false" forcerange="-500 500"/>
+      <position name="joint4" ctrllimited="true" ctrlrange="-1.832 1.832" joint="joint4" kp="400" user="1" forcelimited="false" forcerange="-500 500"/>
+      <position name="joint5" ctrllimited="true" ctrlrange="-1.22 1.22" joint="joint5" kp="400" user="1" forcelimited="false" forcerange="-500 500"/>
+      <position name="joint6" ctrllimited="true" ctrlrange="-3.14158 3.14158" joint="joint6" kp="400" user="1" forcelimited="false" forcerange="-500 500"/>
+  </actuator>
+
+</mujoco>
