@@ -11,8 +11,12 @@ __pycache__/
 
 # 临时文件和数据
 *.log
+*.txt
 tmp/
 temp/
+
+# MuJoCo 日志
+MUJOCO_LOG.TXT
 
 # MuJoCo 编译文件
 *.mjb
@@ -38,6 +42,8 @@ output/
 runs/
 checkpoints/
 logs/
+grasp_train/
+ppo_*/
 *.log
 
 # 大型数据集 (通常不需要上传)
