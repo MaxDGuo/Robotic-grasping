@@ -1,0 +1,32 @@
+name: posecnn_5060
+channels:
+  - conda-forge    # 核心通道，优先使用
+  - pytorch        # pytorch官方通道
+  - nvidia         # nvidia官方通道
+  - nodefaults     # 禁用defaults通道（彻底解决_libgcc_mutex冲突）
+dependencies:
+  - python=3.10 # 固定3.10稳定版本，避免小版本兼容问题
+  # 解决libgcc-ng和_openmp_mutex的通道冲突：放宽版本+移除强制声明
+  - libgcc-ng>=12.2.0,<13.0  
+  - cuda-runtime
+  - cuda-libraries
+  - pytorch-cuda
+  - pytorch
+  - torchvision
+  - torchaudio
+  # 核心依赖：保留精确版本（项目适配性）+ 放宽冲突版本
+  - numpy=1.24.4        # 固定版本，确保项目兼容
+  - scipy=1.10.1        # 固定版本
+  - matplotlib>=3.7,<3.8  # 放宽版本，避免3.7.5精确版找不到
+  - tqdm=4.66.2         # 固定版本
+  - ipykernel>=6.29,<7.0  # 放宽版本，解决6.29.3精确版适配问题
+  - jupyterlab=4.0.11   # 固定版本
+  - ipython=8.12.0      # 固定版本
+  - pip=24.0            # 显式声明pip，消除警告
+  # pip依赖：保留原版本，确保项目兼容
+  - pip:
+    - opencv-python==4.10.0.84
+    - pillow==10.3.0
+    - pyquaternion==0.9.9
+    - pyrender==0.1.45
+    - trimesh==3.22.0

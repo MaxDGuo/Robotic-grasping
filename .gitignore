@@ -21,3 +21,20 @@ temp/
 *.mp4
 *.avi
 *.mov
+
+# 深度学习模型文件 (通常很大)
+*.pth
+*.pt
+*.onnx
+*.h5
+*.pb
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# 训练输出和日志
+output/
+runs/
+checkpoints/
+*.log
